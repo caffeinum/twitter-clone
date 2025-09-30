@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { useAuth } from '@lib/context/auth-context';
 import { NextImage } from '@components/ui/next-image';
 import { CustomIcon } from '@components/ui/custom-icon';
@@ -17,9 +18,20 @@ export function LoginMain(): JSX.Element {
           layout='fill'
           useSkeleton
         />
-        <i className='absolute'>
+        <motion.i
+          className='absolute'
+          initial={{ scale: 0, rotate: -180 }}
+          animate={{ scale: 1, rotate: 0 }}
+          transition={{
+            type: 'spring',
+            stiffness: 260,
+            damping: 20,
+            duration: 0.8
+          }}
+          whileHover={{ scale: 1.1, rotate: 5 }}
+        >
           <CustomIcon className='h-96 w-96 text-white' iconName='TwitterIcon' />
-        </i>
+        </motion.i>
       </div>
       <div className='flex flex-col items-center justify-between gap-6 p-8 lg:items-start lg:justify-center'>
         <i className='mb-0 self-center lg:mb-10 lg:self-auto'>
