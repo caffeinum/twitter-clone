@@ -25,7 +25,15 @@ npm run lint             # Run ESLint
 npm run format           # Check formatting with Prettier
 ```
 
-### Firebase
+### Firebase Setup
+```bash
+npm install -g firebase-tools          # Install Firebase CLI globally
+firebase login                         # Login to Firebase (opens browser)
+firebase projects:list                 # List available projects
+firebase use <project-id>              # Select project to use
+```
+
+### Firebase Deployment
 ```bash
 firebase deploy --except functions    # Deploy Firestore rules, indexes, and Storage rules
 firebase emulators:start              # Start all Firebase emulators
