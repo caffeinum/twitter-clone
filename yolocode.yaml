@@ -1,0 +1,13 @@
+tmux:
+  session: twitter-clone
+  window: dev
+
+services:
+  frontend:
+    command: npm run dev
+    port: 3000
+    setup: npm install
+
+  emulators:
+    command: npm run emulators
+    setup: firebase login
